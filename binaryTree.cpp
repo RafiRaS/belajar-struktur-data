@@ -76,6 +76,21 @@ void preOrder(Node *node = root){
     }
 }
 
+void postOrder(Node *node = root){
+    if(node != NULL){
+        postOrder(node->left);
+        postOrder(node->right);
+        cout<< node->label<<", ";
+    }
+}
+void deleteTree(Node *node){    
+    if(node != NULL){
+        postOrder(node->left);
+        postOrder(node->right);
+        delete node;
+    }
+}
+
 int main(){
     system("cls");
     createNewTree('A');  
